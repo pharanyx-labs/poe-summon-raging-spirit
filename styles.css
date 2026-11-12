@@ -1,0 +1,232 @@
+:root {
+  --paper: #d5ddd4;
+  --paper-2: #e6eee4;
+  --ink: #1a2420;
+  --muted: #3e4c46;
+  --line: #b4c2b2;
+  --sage: #2c4038;
+  --ember: #b8431f;
+  --ember-deep: #8d3016;
+  --warn: #f4e4da;
+  --focus: #1a2420;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; height: 100%; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Public Sans", "Liberation Sans", "Nimbus Sans", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+button, input { font: inherit; color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 12.5rem minmax(0, 1fr) 20rem;
+  min-height: 100vh;
+}
+
+.acts {
+  padding: 1.25rem 0.9rem 2rem;
+  border-right: 1px solid var(--line);
+}
+
+.acts h1 {
+  font-family: "Newsreader", "Liberation Serif", "Nimbus Roman", "Bitstream Charter", serif;
+  font-weight: 560;
+  font-size: 1.55rem;
+  line-height: 1.05;
+  margin: 0 0 0.35rem;
+}
+
+.acts p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.act-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 0 0.25rem;
+  padding: 0.4rem 0.55rem;
+  border: 0;
+  border-left: 3px solid transparent;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.act-btn[aria-current="true"] {
+  border-left-color: var(--ember);
+  background: var(--paper-2);
+}
+
+.act-btn .count { color: var(--muted); }
+
+.main { padding: 1.4rem 1.6rem 3rem; max-width: 44rem; }
+
+.banner {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.where {
+  margin: 0;
+  color: var(--sage);
+  font-size: 0.95rem;
+}
+
+.main h2 {
+  font-family: "Newsreader", "Liberation Serif", "Nimbus Roman", "Bitstream Charter", serif;
+  font-weight: 560;
+  font-size: 2.35rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0.2rem 0 0.8rem;
+  padding-left: 0.7rem;
+  border-left: 6px solid var(--ember);
+}
+
+.walk {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.walk li {
+  padding: 0.12rem 0;
+}
+
+.walk li::before {
+  content: "";
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--sage);
+  transform: translateY(-0.05rem);
+}
+
+.steps { margin: 0 0 1rem; padding-left: 1.15rem; }
+.steps li { margin: 0.35rem 0; }
+
+.gems { margin: 0 0 1rem; padding: 0; list-style: none; }
+.gems li { margin: 0.35rem 0; }
+.gem {
+  display: inline-block;
+  min-width: 3.2rem;
+  margin-right: 0.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+.gem.blue { background: #d5e2f0; }
+.gem.green { background: #d5e4d6; }
+.gem.red { background: #f0d5cf; }
+
+.done-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.4rem 0 1rem;
+}
+
+.done-row input { width: 1.15rem; height: 1.15rem; accent-color: var(--sage); }
+
+.nav-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.nav-row button, .text-btn {
+  border: 1px solid var(--sage);
+  background: var(--paper-2);
+  padding: 0.45rem 0.75rem;
+  cursor: pointer;
+}
+
+.nav-row button:disabled { opacity: 0.45; cursor: default; }
+
+.text-btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.rail {
+  padding: 1.25rem 1.1rem 2rem;
+  border-left: 1px solid var(--line);
+  background: var(--paper-2);
+}
+
+.rail h3 {
+  font-family: "Newsreader", "Liberation Serif", "Nimbus Roman", "Bitstream Charter", serif;
+  font-size: 1.35rem;
+  font-weight: 560;
+  margin: 0 0 0.6rem;
+}
+
+.button-now {
+  margin: 0 0 0.9rem;
+  font-size: 1.15rem;
+}
+
+.equip { margin: 0 0 1rem; padding-left: 1.1rem; }
+.equip li { margin: 0.35rem 0; }
+
+.gate {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.8rem;
+  background: var(--warn);
+  color: var(--ember-deep);
+}
+
+.gate strong {
+  display: block;
+  font-family: "Newsreader", "Liberation Serif", "Nimbus Roman", "Bitstream Charter", serif;
+  font-size: 1.2rem;
+  font-weight: 560;
+  margin-bottom: 0.25rem;
+}
+
+.passives { margin: 0; padding: 0; list-style: none; }
+.passives li { margin: 0.45rem 0; }
+.passives .when { color: var(--muted); font-size: 0.88rem; }
+
+.keys {
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 960px) {
+  .app { grid-template-columns: 1fr; }
+  .acts { border-right: 0; border-bottom: 1px solid var(--line); }
+  .rail {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+  }
+  .main h2 { font-size: 1.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto; }
+}
